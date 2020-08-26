@@ -342,7 +342,7 @@ print(cd_age)
 
 #----------------------------------------------------------------------------------------#
 
-## LOGISTIC REGRESSION MODELS!
+## LOGISTIC REGRESSION MODELS
 # in this section we'll look at how to run logistic and linear regression models using the "car" package
 
 install.packages("car")
@@ -351,31 +351,62 @@ library(car)
 #--------------------#
 
 # LOGISTIC REGRESSION
-# let's see whether any of those new raw change variables predict binary recidivism (yes/no)
+# this section explores whether any of those new raw change variables predict binary recidivism (yes/no)
 
 # first we specify our model 
 
 rx_model <- glm(recon ~ cd.change + prob.change + selfreg.change + scap.change, 
                 full_izon, family = binomial(), na.action = na.exclude)
 
-# then we can call a summary of that model to see the findings
-
 summary(rx_model)
 
 #--------------------#
 
 # LINEAR REGRESSION
-# let's see whether any of the oasys variables predict socially-desirable responding
+# this section explores whether any of the oasys variables predict socially-desirable responding
 
 # first we specify our model 
 
 lie_model <- lm(lie.scale ~ apd + cogdist + associates + family + substance + ete + housing + prosocial, 
                 full_izon, na.action = na.exclude)
 
-# then we can call a summary of that model to see the findings
-
 summary(lie_model)
 
 #----------------------------------------------------------------------------------------#
 
-## end ##
+## MELTING DATA FROM WIDE TO LONG FORMAT
+# this section shows how to reshape data from sets of columns into one column with categorical variables
+# this format helps for multi-level modeling and for some line charts in ggplot2
+
+# isolate the variables that you want to melt
+
+psych <- full_izon %>% select(id, recon, 
+                              pre.prob, pre.selfreg, pre.cog, pre.scap,
+                              post.prob, post.selfreg, post.cog, post.scap)
+
+# use the melt function to turn the data into long-format
+
+psych_lg <- melt(psych, id = c("id", "recon"),
+              measured = c("pre.prob", "pre.selfreg", "pre.cog", "pre.scap",
+                           "post.prob", "post.selfreg", "post.cog", "post.scap"))
+
+# add the categorical variables automatically and adds the names
+
+psych_lg$time <- gl(2, (2120/2), label = c("Pre", "Post"))
+psych_lg$scale <- gl(4, (2120/8), label = c("PS", "SR", "COG", "SCP"))
+
+names(psych_lg) <- c("id", "Recidivism", "variable", "score", "Time", "scale")
+
+# test the data with a line plot
+
+oasys.line <- ggplot(psych_lg, aes(Time, score, colour = Recidivism)) +
+  stat_summary(fun = mean, geom = "point") +
+  stat_summary(fun = mean, geom = "line", aes(group = Recidivism)) +
+  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", width = 0.2) +
+  labs(x = "Time", y = "Scale score", fill = "time") +
+  theme(plot.title = element_text(size = 11)) +
+  scale_color_manual(values = mycolours) +
+  theme(legend.position = "top", ) +
+  facet_wrap(~scale); oasys.line
+
+## END ##
