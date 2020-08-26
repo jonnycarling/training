@@ -6,12 +6,16 @@
 ## SOME CRITICAL BASICS TO START OFF WITH
 
 # 1. anything after a hash will not run, so you can use those to annotate your code
+
 # 2. R is *CASE-SENSITIVE* so if you run into an error, check your spelling and/or capitalisations
+
 # 3. it's entirely up to you, but there is a consensus to dot variables and underscore objects
+
 # 4. to run code, either:
 # a) put the cursor in the line you want to run and hit Ctrl+Rtn
 # b) select (highlight) a section of lines you want to run and click "Run" above
 # c) hit "Run" above and it'll run everything!
+
 # 5. if at first you don't succeed, COPY AND PASTE IT INTO GOOGLE! seriously, whatever you've done
 # i guarantee you, someone else has also done it and there's an explanation of how to fix it!
 
@@ -21,7 +25,8 @@
 
 # in this section we'll look at how to get your data into R Studio for manipulation and analysis
 
-# first set the working drive, so R knows where to go
+# first set the working drive. this tells R where it's getting the data from. however, i find it easier
+# to go to "Files" in the bottom-right-hand box, navigate to the data, "More", and "Set as Working Directory"   
 
 setwd("~/R/training 2019")
 
