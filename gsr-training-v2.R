@@ -57,6 +57,7 @@ risklab <- c("Low", "Med", "High", "Very high") # we will refer back to this!
 2 * 10
 
 total <- 20 + 5
+print(total)
 
 sqrt(total) 
 
