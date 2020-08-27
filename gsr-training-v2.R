@@ -34,6 +34,8 @@ setwd("~/R/training 2019")
 
 mydata <- read.csv("prog-example-data.csv", header = T) # mention the = and == issue!
 
+mydata <- s3tools::s3_path_to_full_df("alpha-apextremism/prog-example-data.csv")
+
 # you can then see the data in a number of diferent ways
 
 View(mydata) # this is typically the most useful way to see everthing
