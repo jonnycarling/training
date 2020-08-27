@@ -51,6 +51,15 @@ mydata # not useful for datasets, but will be relevant for objects like charts a
 
 risklab <- c("Low", "Med", "High", "Very high") # we will refer back to this!
 
+# you can also use R as a calculator to run sums, create values, and use those values in your code:
+
+2 + 2
+2 * 10
+
+total <- 20 + 5
+
+sqrt(total) 
+
 #------------------------#
 
 # DATA FRAMES AND CLASSES
