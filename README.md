@@ -26,6 +26,8 @@ R Studio: https://rstudio.com
 
 ### TMT 3: The R Studio layout
 
+   ![R Studio layout](training/main1.png)  
+
 ### TMT 4: Loading some data into R Studio
 
   
