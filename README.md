@@ -1,6 +1,6 @@
 ## R training for psychologists  
 
-### This is practice code and pseudo-randomised dummy data for basic R training purposes. 
+### This is practice code and dummy data for basic R training purposes. 
 
 The aim of this repository is to help existing psychologists that are trained in SPSS to learn how to replicate those basic skills, but on R Studio.  
 
