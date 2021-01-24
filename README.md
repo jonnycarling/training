@@ -20,9 +20,8 @@ R Studio: https://rstudio.com
   - place the cursor into a single chunk of code you want to run and hit Ctrl+Rtn  
   - select (highlight) chunks of code that you want to run and click the "Run" button  
   - place the cursor at the start and hit "Run": it'll run everything!  
-- If at first you don't succeed, **COPY AND PASTE IT INTO A SEARCH ENGINE!** :)  
 
-> Seriously, whatever you've done I **guarantee** you, someone else has also done it and there's an explanation of how to fix it!  
+> Remember: If at first you don't succeed, **COPY AND PASTE IT INTO A SEARCH ENGINE!** :) Seriously, whatever you've done I **guarantee** you, someone else has also done it and there's an explanation of how to fix it!  
 
 ### TMT 3: The R Studio layout
 When you open R Studio, it should look a bit like this (but if it doesn - **don't worry**, it soon will!):  
