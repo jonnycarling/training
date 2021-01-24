@@ -27,7 +27,7 @@ R Studio: https://rstudio.com
 ### TMT 3: The typical R Studio layout
 When you open R Studio, it should look a bit like this (but if it doesn - **don't worry**, it soon will!):  
 
-   ![R Studio layout](main1.png)  
+   ![R Studio layout](r-screen.png)  
 
 Let's make sure you've got a .R file to write your code in. Either navigate to **File -> New File -> R Script** or press **CTRL+SHIFT+N**.  
 Now you should have four quadrants:  
@@ -43,10 +43,10 @@ We need to do two things here:
 - Import some data from that location.  
 The following code can be either typed or copied into your R file:
     
-    # set my working directory (your's will be wherever you saved the docs)  
+    `#` set my working directory (your's will be wherever you saved the docs)  
     setwd("~/R/training 2019")  
     
-    # this will create a data-frame in your environment with the data  
+    `#` this will create a data-frame in your environment with the data  
     mydata <- read.csv("prog-example-data.csv", header = T)  
     View(mydata)  
     
