@@ -11,9 +11,9 @@ Just remember, the beauty of R is that you can tailor your analyses in a million
 
 Each task will link to a code file, that I recommend that you copy and paste into your 
 
-### TMT 1: Download and install the software
-R: https://cran.ma.imperial.ac.uk/
-R Studio: https://rstudio.com
+### TMT 1: Download and install the software  
+R: https://cran.ma.imperial.ac.uk/  
+R Studio: https://rstudio.com  
 
-### TMT 2: Load a .csv data file into R Studio
+### TMT 2: Load a .csv data file into R Studio  
 
