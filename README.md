@@ -31,7 +31,8 @@ R Studio: https://rstudio.com
 
 ### TMT 4: Loading some data into R Studio
 
-`mydata <- read.csv("prog-example-data.csv", header = T)`
+  `mydata <- read.csv("prog-example-data.csv", header = T)  
+  View(mydata)`
 
 ### TMT 5: Exploring the nature of the data
 
