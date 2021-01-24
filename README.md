@@ -14,7 +14,7 @@ R: https://cran.ma.imperial.ac.uk/
 R Studio: https://rstudio.com  
 
 ### TMT 2: Understand a couple of basic need-to-knows  
-- Anything after a hash will not run, so you can use those to annotate your code.  
+- Anything after a hash (#) will not run, so you can use those to annotate your code.  
 - R is **CASE-SENSITIVE** so if you run into an error, check your spelling and/or capitalisations.  
 - To **run** code, either:  
   - place the cursor into a single chunk of code you want to run and hit Ctrl+Rtn  
