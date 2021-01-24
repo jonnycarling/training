@@ -25,8 +25,17 @@ R Studio: https://rstudio.com
 > Seriously, whatever you've done I **guarantee** you, someone else has also done it and there's an explanation of how to fix it!  
 
 ### TMT 3: The R Studio layout
+When you open R Studio, it should look a bit like this (but if it doesn - **don't worry**, it soon will!):  
 
    ![R Studio layout](main1.png)  
+
+Let's make sure you've got a .R file to write your code in. Either navigate to **File -> New File -> R Script** or press **CTRL+SHIFT+N**.  
+Now you should have four quadrants:  
+- **Top left**: This is your .R file, where you'll write and save your code.   
+- **Bottom left**: This is the console, where you'll see you code executed and get your data outputs.  
+- **Top right**: This is your environment, where your data and other objects you've created will be listed.  
+- **Bottom left**: This is your file structure, where you'll see the folder you're working from.  
+    - It's also where your plots will go and where you can find in-software help.   
 
 ### TMT 4: Loading some data into R Studio
 
