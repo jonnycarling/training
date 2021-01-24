@@ -1,4 +1,4 @@
-## Training  
+## R training for psychologists  
 
 ### This is practice code and pseudo-randomised dummy data for basic R training purposes. 
 
