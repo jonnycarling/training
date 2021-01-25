@@ -45,14 +45,14 @@ We need to do two things here:
 - Tell R Studio where in our hard drive (or online) we need it to go to find the things we want to use (code, data, etc).  
 - Import some data from that location.  
 The following code can be either typed or copied into your R file:
-    `
+    
     # set my working directory (your's will be wherever you saved the docs)  
     setwd("~/R/training 2019")  
     
     # this will create a data-frame in your environment with the data  
     mydata <- read.csv("prog-example-data.csv", header = T)  
     View(mydata)  
-    `
+    
 
 ### STEP 5: Exploring the nature of the data
 
