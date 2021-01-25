@@ -46,20 +46,22 @@ Now you should have four quadrants:
 - **Bottom left**: This is your file structure, where you'll see the folder you're working from.  
     - It's also where your plots will go and where you can find in-software help.   
     
-### STEP X: Set a working directory  
-First, we need to tell R Studio where in our hard drive (or online) we need it to go to find the things we want to use (code, data, etc).
+### STEP 4: Set a working directory  
+First, we need to tell R Studio where in our hard drive (or online) we need it to go to find the things we want to use (code, data, etc).  
+- Navigate to the "Go to Directory" button on the "Files" tab of the bottom-right pane (it should be the three dots).  
+- From there you can navigate to the folder that your created and into which you saved the data. Then click Open.  
+- In the "Files" tab (bottom-right pane) click **More -> Set As Working Directory**. You'll see in the console (bottom-left pane) that this is executed as (for example):
+    
+    setwd(~R\Training)
+    
 
-### STEP 4: Loading some data into R Studio  
-We need to do two things here:
--   
-- Import some data from that location.
-
-Navigate to the "Go to Directory" button on the "Files" tab of the bottom-right pane (it should be the three dots). From there you can navigate to the folder in which you saved the data and the   
-
+### STEP 5: Loading some data into R Studio  
+Now we can load the data into 
+   
     mydata <- read.csv("prog-example-data.csv", header = T)  
     View(mydata)  
     
 
-### STEP 5: Exploring the nature of the data
+### STEP 6: Exploring the nature of the data
 
-### STEP 6: 
+### STEP 7: 
