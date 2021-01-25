@@ -6,17 +6,17 @@ The aim of this repository is to help existing psychologists that are trained in
 
 The objective is to guide you, step-by-step, through two examples of basic analyses that you might encounter from typical psychological intervention data and that you may have already conducted using SPSS.  
 
-The first is a t-test using numerical data and the second is a chi-square test using categorical data.  
+The first is a two-sample student's t-test using numerical data and the second is a chi-square test of association using categorical data.  
 
-The aim is to illustrate, using those two worked examples, how R Studio works and introduce you to the process of writing analytical code. It is **not** intended to be a comprehensive introduction to statistics on R.  
+The aim is to illustrate, using those two worked examples, how R Studio works and introduce you to the process of writing analytical code. It is **not** intended to be a comprehensive introduction to statistics on R. (Yes, it may be *techncially* correct to examine, say, adherence to the assuptions of those statistical tests but time is of the essence!)  
 
 > Just remember, the beauty of R is that you can tailor your analyses in a million different ways - don't take these examples as gospel!
 
-### TMT 1: Download and install the software  
+### STEP 1: Downloading and installing the neccessary software  
 R: https://cran.ma.imperial.ac.uk/  
 R Studio: https://rstudio.com  
 
-### TMT 2: Understand a couple of basic need-to-knows  
+### STEP 2: Understanding a few basic "need-to-knows"  
 - Anything after a hash (#) will not run, so you can use those to annotate your code.  
 - R is **CASE-SENSITIVE** so if you run into an error, check your spelling and/or capitalisations.  
 - Copying and pasting code is not cheating: in fact, it's part and parcel of the collaborative nature of open-source stats!  
@@ -27,7 +27,7 @@ R Studio: https://rstudio.com
 
 > Remember: If at first you don't succeed, **COPY AND PASTE IT INTO A SEARCH ENGINE!** :) Seriously, whatever you've done I **guarantee** you, someone else has also done it and there's an explanation of how to fix it!  
 
-### TMT 3: The typical R Studio layout
+### STEP 3: Familarising yourself with the typical R Studio layout
 When you open R Studio, it should look a bit like this (but if it doesn - **don't worry**, it soon will!):  
 
    ![R Studio layout](r-screen.png)  
@@ -40,7 +40,7 @@ Now you should have four quadrants:
 - **Bottom left**: This is your file structure, where you'll see the folder you're working from.  
     - It's also where your plots will go and where you can find in-software help.   
 
-### TMT 4: Loading some data into R Studio  
+### STEP 4: Loading some data into R Studio  
 We need to do two things here:
 - Tell R Studio where in our hard drive (or online) we need it to go to find the things we want to use (code, data, etc).  
 - Import some data from that location.  
@@ -54,6 +54,6 @@ The following code can be either typed or copied into your R file:
     View(mydata)  
     `
 
-### TMT 5: Exploring the nature of the data
+### STEP 5: Exploring the nature of the data
 
-### TMT 6: 
+### STEP 6: 
