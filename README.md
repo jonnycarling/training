@@ -12,9 +12,14 @@ The aim is to illustrate, using those two worked examples, how R Studio works an
 
 > Just remember, the beauty of R is that you can tailor your analyses in a million different ways - don't take these examples as gospel! And don't be scared to try some coding of your own - you can always press CTRL+Z to undo your edits.
 
-### STEP 1: Downloading and installing the neccessary software  
-R: https://cran.ma.imperial.ac.uk/  
-R Studio: https://rstudio.com  
+### STEP 1: Downloading and installing the neccessary stuff  
+Here's where you want to go to get the software.  
+**R**: https://cran.ma.imperial.ac.uk/  
+**R Studio**: https://rstudio.com  
+
+Create a folder somewhere easy to find on your computer. My recommendation is to create the folder **My Documents/R** and then a subfolder called /Training  
+Download the data from this repository and move it into that folder.  
+https://github.com/ianaelliott/training  
 
 ### STEP 2: Understanding a few basic "need-to-knows"  
 - Any text that is prefixed with a hash (#) will be ignored by R, so you can use hash marks to annotate your code.  
