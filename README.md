@@ -50,9 +50,9 @@ Now you should have four quadrants:
 First, we need to tell R Studio where in our hard drive (or online) we need it to go to find the things we want to use (code, data, etc).  
 - Navigate to the "Go to Directory" button on the "Files" tab of the bottom-right pane (it should be the three dots).  
 - From there you can navigate to the folder that your created and into which you saved the data. Then click Open.  
-- In the "Files" tab (bottom-right pane) click **More -> Set As Working Directory**. You'll see in the console (bottom-left pane) that this is executed as (for example):
+- In the "Files" tab (bottom-right pane) click **More -> Set As Working Directory**. You'll see in the console (bottom-left pane) that this is executed as (for example):  
     
-    setwd(~R\Training)
+`setwd(~R\Training)`
     
 
 ### STEP 5: Loading some data into R Studio  
