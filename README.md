@@ -17,7 +17,7 @@ R: https://cran.ma.imperial.ac.uk/
 R Studio: https://rstudio.com  
 
 ### STEP 2: Understanding a few basic "need-to-knows"  
-- Anything after a hash (#) will not run, so you can use those to annotate your code.  
+- Any text that is prefixed with a hash (#) will be ignored by R, so you can use hash marks to annotate your code.  
 - R is **CASE-SENSITIVE** so if you run into an error, check your spelling and/or capitalisations.  
 - Copying and pasting code is not cheating: in fact, it's part and parcel of the collaborative nature of open-source stats!  
 - To **run** code, either:  
