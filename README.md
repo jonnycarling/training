@@ -8,9 +8,9 @@ The objective is to guide you, step-by-step, through two examples of basic analy
 
 The first is a two-sample student's t-test using numerical data and the second is a chi-square test of association using categorical data.  
 
-The aim is to illustrate, using those two worked examples, how R Studio works and introduce you to the process of writing analytical code. It is **not** intended to be a comprehensive introduction to statistics on R. (Yes, it may be *techncially* correct to examine, say, adherence to the assuptions of those statistical tests but time is of the essence!)  
+The aim is to illustrate, using those two worked examples, how R Studio works and introduce you to the process of writing analytical code. It is **not** intended to be a comprehensive introduction to statistics on R. Clearly, you would do more than this if you were doing a real analysis.  
 
-> Just remember, the beauty of R is that you can tailor your analyses in a million different ways - don't take these examples as gospel!
+> Just remember, the beauty of R is that you can tailor your analyses in a million different ways - don't take these examples as gospel! And don't be scared to try some coding of your own - you can always press CTRL+Z to undo your edits.
 
 ### STEP 1: Downloading and installing the neccessary software  
 R: https://cran.ma.imperial.ac.uk/  
@@ -33,23 +33,24 @@ When you open R Studio, it should look a bit like this (but if it doesn - **don'
    ![R Studio layout](r-screen.png)  
 
 Let's make sure you've got a .R file to write your code in. Either navigate to **File -> New File -> R Script** or press **CTRL+SHIFT+N**.  
+
 Now you should have four quadrants:  
 - **Top left**: This is your .R file, where you'll write and save your code. Why not give your file a title like ``## MY TRAINING CODE ##``   
 - **Bottom left**: This is the console, where you'll see you code executed and get your data outputs.  
 - **Top right**: This is your environment, where your data and other objects you've created will be listed.  
 - **Bottom left**: This is your file structure, where you'll see the folder you're working from.  
     - It's also where your plots will go and where you can find in-software help.   
+    
+### STEP X: Set a working directory  
+First, we need to tell R Studio where in our hard drive (or online) we need it to go to find the things we want to use (code, data, etc).
 
 ### STEP 4: Loading some data into R Studio  
 We need to do two things here:
-- Tell R Studio where in our hard drive (or online) we need it to go to find the things we want to use (code, data, etc).  
-- Import some data from that location.  
-The following code can be either typed or copied into your R file:
-    
-    # set my working directory (your's will be wherever you saved the docs)  
-    setwd("~/R/training 2019")  
-    
-    # this will create a data-frame in your environment with the data  
+-   
+- Import some data from that location.
+
+Navigate to the "Go to Directory" button on the "Files" tab of the bottom-right pane (it should be the three dots). From there you can navigate to the folder in which you saved the data and the   
+
     mydata <- read.csv("prog-example-data.csv", header = T)  
     View(mydata)  
     
