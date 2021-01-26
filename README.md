@@ -123,15 +123,15 @@ Here's an example of a within-subjects t-test to examine the pre-and post-progra
 
 ### STEP 8: Let's try a basic chi-square test of association!  
 Ok, so what about categorical data? Let's try the association between *pre-treatment risk* (risk.gen) and *programme* (prog.type).  
-We know that prog.type is categorical already (it's class = factor) so let's check the risk variable is also in the correct format:
+We know that prog.type is categorical already (it's class = factor) so let's check the risk variable is also in the correct format:  
     
     class(mydata$risk.gen)
     
-This should also return that ethnicity is a "factor". We can also see what levels are in that factor with a string command:
+This should also return that ethnicity is a "factor". We can also see what levels are in that factor with a string command:  
     
     str(mydata$risk.gen)
     
-The output tells us that risk.gen is a factor with 4 levels:
+The output tells us that risk.gen is a factor with 4 levels:  
     
     > str(mydata$risk.gen)
      Factor w/ 4 levels "High","Low","Medium",..: 1 3 1 1 1 1 1 4 3 3 ...
@@ -140,18 +140,85 @@ We can also look at a table of the data before we run a chi-square test:
     
     table(mydata$risk.gen, mydata$prog.type)
     
-The output shows us the frequencies within each level of the factor, by the programme or no-programme groups.
+The output shows us the frequencies within each level of the factor, by the programme or no-programme groups.  
     
     > table(mydata$risk.gen, mydata$prog.type)
         
-                izon None
+             izon None
       High     81  108
       Low      11   26
       Medium  170  242
       Vhigh    40   72
 
+Now we run the chi-square test by executing:  
+    
+    chisq.test(mydata$ethnicity, mydata$prog.type)
 
+Like the t-test, the output gives us a chi-square test value, degrees of freedom, and a p-value.  
+    
+    > chisq.test(mydata$ethnicity, mydata$prog.type)
 
+	          Pearson's Chi-squared test
 
+    data:  mydata$ethnicity and mydata$prog.type
+    X-squared = 9.5829, df = 9, p-value = 0.3853
+    
+> Try your own chi-square tests on other categorical variables (e.g., ethnicity, previous convictions)!  
 
-END
+### STEP 8: This is a step to the next level, but we can use the "ggplot2" to chart those effects.  
+One of the absolute strengths of R is the ability to visualise data and outcomes. Let's plot those two tests we've run.  
+"Base R" (the functions that come with R before you install any packages) can do plots, but they're pretty ugly.  
+First we'll run some code for a simple-but-ugly base chart, then we'll run some for a complex-but-beautiful ggplot chart!  
+
+But first we need to install the *ggplot2* package:  
+    
+    install.packages("ggplot2", dependencies = T)
+    library(ggplot2)  
+    
+Here's the plot you can get from base R:  
+    
+    plot(mydata$prog.type, mydata$apd)
+    
+Prob couldn't get that into a journal article though right? Well, we can spruce it up with ggplot.  
+We'll also install and load *ggpubr* and *Hmisc*, so we can include a significance bar and error bars.  
+    
+    install.packages(c("ggpubr", "Hmisc"), dependencies = T)
+    library(ggpubr)  
+    library(Hmisc)  
+    
+So here's the code you can run:  
+    
+    mycolours <- c("#284969", "#5599C6") # pick a couple of colours
+    prog.comps <- list(c("izon", "None")) # tell ggpubr what comparison you want it to show significance for
+    ggplot(mydata, aes(prog.type, apd, fill = prog.type)) +
+      stat_summary(fun = mean, geom = "bar", position = "dodge", alpha = 0.5, colour = "black") +
+      stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width = .90), width = .1) +
+      stat_compare_means(comparisons = prog.comps, method = "t.test",
+                         label = "p.signif", label.y = c(5.5), 
+                         tip.length = .01, size = 4) +
+      labs(x= "Prog", y = "APD", fill = "Prog") +
+      scale_fill_manual(values = mycolours, labels = c("izon", "None")) +
+      theme(text = element_text(size = 12), legend.position = "none")
+    
+Let's have a quick look at the ingredients here:  
+- Line 1: Creates a vector object called "mycolours" that specify two colours you'd like to use in the chart.  "c" means "combine".   
+- Line 2: Creates a list object called "prog.comps" that will tell the gggpubr package how to render your significance bar  
+- Line 3: Starts the chart. Specifies "mydata" as the source of the data, and the aesthetics ("aes") of variables prog.type and apd. Also tells ggplot to use the prog.type variable to group the bars. The plus sign (+) tells R to join these bits of code into one "chunk".  
+- Line 4:  Provides the stats you want to render. You want to use the *mean* function to chart the means, via a bar chart, with the options to "dodge" (separate) the bars, make them 50% transparent, and give the bars a black outline.  
+- Line 5:  Adds the error bars, using the mean using the *mean_cl_normal* function from Hmisc.
+- Line 6:  
+- Line 7:  
+- Line 8:  
+- Line 9:  
+- Line 10:  
+
+### STEP 9: Save your code file and consider your own journey into the brave new world...  :)  
+We've come to the end of this whistle-stop tour. The possibilities for analysis on R are vast, but the learning curve is incredibly steep.  
+However, if you commit to integrating it into your stats projects and building on your skills, it really will start to come naturally - I promise!  
+
+> **Last tip!** I would recommend adding something like Andy Field's excellent R version of his SPSS textbook to your library. It's a really good investment.  
+  > https://uk.sagepub.com/en-gb/eur/discovering-statistics-using-r/book236067
+
+GOOD LUCK!!!
+**Ian**
+*Last updated: January, 2021*
