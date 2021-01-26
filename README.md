@@ -200,25 +200,30 @@ So here's the code you can run:
       scale_fill_manual(values = mycolours, labels = c("izon", "None")) +
       theme(text = element_text(size = 12), legend.position = "none")
     
-Let's have a quick look at the ingredients here:  
+This should arrive in the "Plots" tab in the bottom-right hand pane.  
+
+This is a bit more complicated (but presented here as a final demonstration!), so let's have a quick look at the ingredients here:  
 - Line 1: Creates a vector object called "mycolours" that specify two colours you'd like to use in the chart.  "c" means "combine".   
-- Line 2: Creates a list object called "prog.comps" that will tell the gggpubr package how to render your significance bar  
-- Line 3: Starts the chart. Specifies "mydata" as the source of the data, and the aesthetics ("aes") of variables prog.type and apd. Also tells ggplot to use the prog.type variable to group the bars. The plus sign (+) tells R to join these bits of code into one "chunk".  
-- Line 4:  Provides the stats you want to render. You want to use the *mean* function to chart the means, via a bar chart, with the options to "dodge" (separate) the bars, make them 50% transparent, and give the bars a black outline.  
-- Line 5:  Adds the error bars, using the mean using the *mean_cl_normal* function from Hmisc.
-- Line 6:  
-- Line 7:  
-- Line 8:  
-- Line 9:  
-- Line 10:  
+- Line 2: Creates a list object called "prog.comps" that will tell the gggpubr package how to render your significance bar.  
+- Line 3: Starts the chart as an object. Specifies "mydata" as the source of the data, and the aesthetics ("aes") of variables prog.type and apd. Also tells ggplot to use the prog.type variable to group the bars. The plus sign (+) tells R to join these bits of code into one "chunk".  
+- Line 4:  Specifies the stats you want to the chart to use. You want to use the *mean* function from "stats" to chart the means, via a bar chart, with the options to "dodge" (separate) the bars, make them 50% transparent, and give the bars a black outline.  
+- Line 5:  Adds the error bars, using the mean using the *mean_cl_normal* function from "Hmisc", and instructions on where to position them and their size.  
+- Line 6:  Adds the significance bar by telling ggplot to display the outcome of a "t.test" on the levels specified in "prog.comps". It also specifies that you want the display the p-value test. Lastly it tells ggplot how high up the y axis to put it (label.y) and what size and shape it should be (size, tip.length).  
+- Line 7:  Adds labels to the chart on the x and y axis and tells ggplot what to use to label the bars (fill).  
+- Line 8:  Adds the colours specified in the "mycolours" object and which levels you want them applying to.  
+- Line 9:  Lastly, changes the size of the text and removes the legend.  
+
+> Dare to try changing some of the visualisations?! For example, try **changing legend.position = "none"** to **legend.position = "top"**...   
 
 ### STEP 9: Save your code file and consider your own journey into the brave new world...  :)  
+Save your code file by navigating to **File -> Save As** and save your file with a name like "training.R"  
+(Who knows, you might be coming back to add to it in the future!)  
+
 We've come to the end of this whistle-stop tour. The possibilities for analysis on R are vast, but the learning curve is incredibly steep.  
 However, if you commit to integrating it into your stats projects and building on your skills, it really will start to come naturally - I promise!  
 
-> **Last tip!** I would recommend adding something like Andy Field's excellent R version of his SPSS textbook to your library. It's a really good investment.  
-  > https://uk.sagepub.com/en-gb/eur/discovering-statistics-using-r/book236067
+> **Last tip!** I would recommend adding something like Andy Field's excellent R version of his SPSS textbook to your library. It's a really good investment. https://uk.sagepub.com/en-gb/eur/discovering-statistics-using-r/book236067  
 
-GOOD LUCK!!!
-**Ian**
-*Last updated: January, 2021*
+GOOD LUCK!!!  
+**Ian**  
+*Last updated: January, 2021*  
