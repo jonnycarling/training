@@ -8,7 +8,7 @@
 
 **Objective:** To guide the reader, step-by-step, through two examples of basic statistical analyses that a typical psychologist would likely have encountered and may have conducted before using SPSS: (1) a two-sample student's t-test using numerical data and (2) a chi-square test of association using categorical data.  
 
-> **Remember:** The beauty of R is that you can tailor your analyses in a million different ways. Don't presume these examples even scratch the surface of what R can do! And don't be scared to try some coding of your own - you can always press CTRL+Z to undo your edits :)  
+> **Remember:** The beauty of R is that you can tailor your analyses in a million different ways. Don't presume these examples even scratch the surface of what R can do! And don't be scared to try some coding of your own - you can always press **CTRL+Z** to undo your edits :)  
 
 ### STEP 1: Downloading and installing the neccessary stuff  
 Here's where you want to go to get the software.  
