@@ -224,7 +224,7 @@ This is a bit more complicated (but presented here as a final demonstration!), s
 - **Line 8:**  Adds the colours specified in the ``mycolours`` object and which levels you want them applying to.  
 - **Line 9:**  Lastly, changes the size of the text and removes the legend.  
 
-> Dare to try changing some of the visualisations?! For example, try ``changing legend.position = "none"`` to ``legend.position = "top"``...   
+> Dare to try changing some of the visualisations?! For example, try changing ``legend.position = "none"`` to ``legend.position = "top"``...   
 
 ### STEP 9: Save your code file and consider your own journey into the brave new world...  :)  
 Save your code file by navigating to **File -> Save As** and save your file with a name like "training.R"  
