@@ -1,4 +1,4 @@
-## Demonstration R for curious psychologists  
+## Demonstrating R for curious psychologists  
 
 ### This is practice code and dummy data for basic R training purposes. 
 
