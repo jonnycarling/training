@@ -88,8 +88,35 @@ Hopefully, this has returned:
     
 This is good. If it hasn't, you can change the data by...   
 
-To run the t-test, execute:
+To run the t-test you want to test the apd scores by programme type, so execute:
     
     t.test(mydata$apd ~ mydata$prog.type)
     
+This should return something similar to:
+
+    > t.test(mydata$apd ~ mydata$prog.type)
+
+  	      Welch Two Sample t-test
+
+    data:  mydata$apd by mydata$prog.type
+    t = -0.3321, df = 663.07, p-value = 0.7399
+    alternative hypothesis: true difference in means is not equal to 0
+    95 percent confidence interval:
+      -0.4276355  0.3039068
+    sample estimates:
+    mean in group izon mean in group None 
+              4.543046           4.604911
+
+This tells us that the group means are 4.5 for the programme group and 4.6 for the no-programme group.  
+The t-value is -0.33 at 663.07 degrees of freedom, and the p-value is .740. So, we fail to reject the null hypothesis.  
+
+> **Try your own t-tests**, by selecting different integer (score) and factor (group) variables in the datset! 
+
+### STEP 8: Let's try a basic chi-square test of association!  
+
+
+
+
+
+
 END
