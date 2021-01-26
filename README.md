@@ -55,7 +55,8 @@ First, we need to tell R Studio where in our hard drive (or online) we need it t
       
 
 ### STEP 5: Loading some data into R Studio  
-Now we can load the data into 
+Now we can load the data into our project environment so that we can run code over it.  
+**Remember**: To run code, in turn, place the cursor in the line you want to run and then press CTRL+RETURN.   
     
     mydata <- read.csv("prog-example-data.csv", header = T)  
     View(mydata)  
@@ -72,6 +73,23 @@ For now, we'll just need the "stats" package. First you'll install the package t
     
 
 ### STEP 7: Let's try a basic between-subjects t-test!  
-First we want to check our data are numerical so that the test will execute correctly:
+Ok, let's see if there is a *programme* effect (prog.type) of *antisocial personality disorder* (apd).  
+First we want to check our data are numerical so that the test will execute correctly:  
+    
+    class(mydata$apd)
+    class(mydata$prog.type)
 
+Hopefully, this has returned:  
+    
+    > class(mydata$apd)
+    [1] "integer"
+    > class(mydata$prog.type)
+    [1] "factor"
+    
+This is good. If it hasn't, you can change the data by...   
 
+To run the t-test, execute:
+    
+    t.test(mydata$apd ~ mydata$prog.type)
+    
+END
