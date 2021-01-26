@@ -8,18 +8,17 @@ The objective is to guide you, step-by-step, through two examples of basic analy
 
 The first is a two-sample student's t-test using numerical data and the second is a chi-square test of association using categorical data.  
 
-The aim is to illustrate, using those two worked examples, how R Studio works and introduce you to the process of writing analytical code. It is **not** intended to be a comprehensive introduction to statistics on R. Clearly, you would do more than this if you were doing a real analysis.  
+The aim is to illustrate, using two worked examples, how R Studio operates and introduce you to the process of writing and running analytical code. It is **not** intended to be a comprehensive introduction to statistics on R. (Clearly, you would do more than is covered here if you were doing a real analysis.)  
 
-> Just remember, the beauty of R is that you can tailor your analyses in a million different ways - don't take these examples as gospel! And don't be scared to try some coding of your own - you can always press CTRL+Z to undo your edits.
+> Just remember, the beauty of R is that you can tailor your analyses in a million different ways. Don't presume these examples even scratch the surface of what R can do! And don't be scared to try some coding of your own - you can always press CTRL+Z to undo your edits :)  
 
 ### STEP 1: Downloading and installing the neccessary stuff  
 Here's where you want to go to get the software.  
 **R**: https://cran.ma.imperial.ac.uk/  
 **R Studio**: https://rstudio.com  
 
-Create a folder somewhere easy to find on your computer. My recommendation is to create the folder **My Documents/R** and then a subfolder called /Training  
-Download the data from this repository and move it into that folder.  
-https://github.com/ianaelliott/training  
+Create a folder somewhere easy to find on your computer. My recommendation is to create a folder in **My Documents/R** and then a subfolder called /Training  
+Download the data from this repository (https://github.com/ianaelliott/training) and move it into that folder.  
 
 ### STEP 2: Understanding a few basic "need-to-knows"  
 - Any text that is prefixed with a hash (#) will be ignored by R, so you can use hash marks to annotate your code.  
@@ -53,7 +52,9 @@ First, we need to tell R Studio where in our hard drive (or online) we need it t
 - In the "Files" tab (bottom-right pane) click **More -> Set As Working Directory**. You'll see in the console (bottom-left pane) that this is executed as (for example):  
     
 `
+
 setwd(~R\Training)
+
 `
     
 
