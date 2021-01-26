@@ -92,7 +92,7 @@ Specifying ``dependencies = T`` tells R that you also want to install any other 
 
 ---
 ### STEP 7: Let's try a basic between-subjects t-test!  
-Ok, let's see if there is a *programme* effect ``prog.type`` of *antisocial personality disorder* ``apd``.  
+Ok, let's test the null hypothesis that there is no statistically-significant group difference of *programme* ``prog.type`` on *antisocial personality disorder* ``apd``.  
 First we want to check our data are numerical so that the test will execute correctly:  
     
     class(mydata$apd)
