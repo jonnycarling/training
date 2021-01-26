@@ -8,8 +8,10 @@
 
 **Objective:** To guide the reader, step-by-step, through two examples of basic statistical analyses that a typical psychologist would likely have encountered and may have conducted before using SPSS: (1) a two-sample student's t-test using numerical data and (2) a chi-square test of association using categorical data.  
 
-> **Remember:** The beauty of R is that you can tailor your analyses in a million different ways. Don't presume these examples even scratch the surface of what R can do! And don't be scared to try some coding of your own - you can always press **CTRL+Z** to undo your edits :)  
+> **Remember:** The beauty of R is that you can tailor your analyses in a million different ways. 
+> Don't presume these examples even scratch the surface of what R can do! And don't be scared to try some coding of your own - you can always press **CTRL+Z** to undo your edits :)  
 
+---
 ### STEP 1: Downloading and installing the neccessary stuff  
 Here's where you want to go to get the software.  
 **R**: https://cran.ma.imperial.ac.uk/  
@@ -18,6 +20,7 @@ Here's where you want to go to get the software.
 Create a folder somewhere easy to find on your computer's hard drive. My recommendation is to create a folder in **My Documents/R** and then a subfolder called /Training  
 Download the data from this repository (https://github.com/ianaelliott/training) and move it into that folder.  
 
+---
 ### STEP 2: Understanding a few basic "need-to-knows"  
 - Any text that is prefixed with a hash ``#`` will be ignored by R, so you can use hash marks to annotate your code.  
 - R is **CASE-SENSITIVE** so if you run into an error, check your spelling and/or capitalisations.  
@@ -27,8 +30,10 @@ Download the data from this repository (https://github.com/ianaelliott/training)
   - select (highlight) chunks of code that you want to run and click the "Run" button  
   - place the cursor at the start and hit "Run": it'll run everything!  
 
-> **Remember:** If at first you don't succeed, **COPY AND PASTE IT INTO A SEARCH ENGINE!** :) Seriously, whatever you've done I **guarantee** you, someone else has also done it and there's an explanation of how to fix it!  
+> **Remember:** If at first you don't succeed, **COPY AND PASTE IT INTO A SEARCH ENGINE!** :) 
+> Seriously, whatever you've done I **guarantee** you, someone else has also done it and there's an explanation of how to fix it!  
 
+---
 ### STEP 3: Familarising yourself with the typical R Studio layout
 When you open R Studio, it should look a bit like the image below. But if it doesn't, **don't worry**, it soon will!  
 
@@ -42,7 +47,8 @@ Now you should have four quadrants:
 - **Top right**: This is your environment, where your data and other objects you've created will be listed.  
 - **Bottom left**: This is your file structure, where you'll see the folder you're working from.  
     - It's also where your plots will go and where you can find in-software help.   
-    
+
+---
 ### STEP 4: Set a working directory  
 First, we need to tell R Studio where in our hard drive (or online) we need it to go to find the things we want to use (code, data, etc).  
 - Navigate to the "Go to Directory" button on the "Files" tab of the bottom-right pane (it should be the three dots).  
@@ -52,23 +58,27 @@ First, we need to tell R Studio where in our hard drive (or online) we need it t
       > setwd(~R\Training)
       
 
+---
 ### STEP 5: Loading some data into R Studio  
 Now we can load the data into our project environment so that we can run code over it.  
 
-> **Remember**: To run code, in turn, place the cursor in the line you want to run and then press CTRL+RETURN. You can run each line at a time, or highlight the two lines and run them with the "Run" button in the top-right of the code file pane.  
+> **Remember**: To run code, in turn, place the cursor in the line you want to run and then press CTRL+RETURN. 
+> You can run each line at a time, or highlight the two lines and run them with the "Run" button in the top-right of the code file pane.  
     
     mydata <- read.csv("prog-example-data.csv", header = TRUE)  
     View(mydata)  
     
 Objects are created and assigned values using ``<-`` or ``=``. So this will create an object called ``mydata`` that is a dataframe built from the .csv file.  
 
-> **Tip:** ``=`` doesn't mean equal to in R, it means "assign to". If you need to specify that something "is equal to" you need to use ``==``. This maybe makes more sense when you consider other similar operators are also combinations of two characters: not-equal-to ``!=``, less-than-or-equal-to ``<=``, and so on.  
+> **Tip:** ``=`` doesn't mean equal to in R, it means "assign to". If you need to specify that something "is equal to" you need to use ``==``. 
+> This maybe makes more sense when you consider other similar operators are also combinations of two characters: not-equal-to ``!=``, less-than-or-equal-to ``<=``, and so on.  
 
 The ``header = T`` option let's R know that your columns have headers at the top.  
 The second line allows you to view the dataframe object that you've just created. You should see it in the environment (top-right pane).  
 
 > **Tip**: You can substitute ``TRUE`` and ``FALSE`` for ``T`` and ``F``.  
 
+---
 ### STEP 6: We need some packages   
 Packages are the euivalent of the functions you select from the toolbar in SPSS.  
 For now, we'll just need the ``stats`` package. First you'll install the package to the "library" of packages on your hard drive, then load them from the library so that we can use the functions within them in our analyses.
@@ -78,6 +88,7 @@ For now, we'll just need the ``stats`` package. First you'll install the package
     
 Specifying ``dependencies = T`` tells R that you also want to install any other packages that the ``stats`` package requires to run.  
 
+---
 ### STEP 7: Let's try a basic between-subjects t-test!  
 Ok, let's see if there is a *programme* effect ``prog.type`` of *antisocial personality disorder* ``apd``.  
 First we want to check our data are numerical so that the test will execute correctly:  
@@ -97,7 +108,8 @@ This is good. If it doesn't look like that, you can change the class of the data
     mydata$adp <- as.integer(mydata$adp)
     mydata$prog.type <- as.integer(mydata$prog.type)  
     
-> **Remember:** the ``$`` operator separates an object from the elements within it, in the format ``object$element``. Here, that's in the format ``data$variable``.   
+> **Remember:** the ``$`` operator separates an object from the elements within it, in the format ``object$element``. 
+> Here, that's in the format ``data$variable``.   
 
 To run the t-test you want to test the apd scores by programme type, so execute:
     
@@ -129,6 +141,7 @@ Here's an example of a within-subjects t-test to examine the pre-and post-progra
     t.test(mydata$pre.prob, mydata$post.prob, paired = T)
     
 
+---
 ### STEP 8: Let's try a basic chi-square test of association!  
 Ok, so what about categorical data? Let's try the association between *pre-treatment risk* ``risk.gen`` and *programme* ``prog.type``.  
 We know that ``prog.type`` is categorical already (it's class = factor) so let's check the risk variable is also in the correct format:  
@@ -171,8 +184,9 @@ Like the t-test, the output gives us a chi-square test value, degrees of freedom
     data:  mydata$ethnicity and mydata$prog.type
     X-squared = 9.5829, df = 9, p-value = 0.3853
     
-> Try your own chi-square tests on other categorical variables (e.g., ethnicity, previous convictions)!  
+> **Tip:** Try your own chi-square tests on other categorical variables (e.g., ethnicity, previous convictions)!  
 
+---
 ### STEP 8: This is a step to the next level, but we can use ``ggplot2`` to chart those effects.  
 One of the absolute strengths of R is the ability to visualise data and outcomes. Let's plot those two tests we've run.  
 "Base R" (the functions that come with R before you install any packages) can do plots, but they're pretty ugly.  
@@ -216,6 +230,7 @@ But, again, it's not as visually attractive as it could be. Let's add some bells
 This should arrive in the "Plots" tab in the bottom-right hand pane.  
 
 This is a bit more complicated (but presented here as a final demonstration!), so let's have a quick look at the ingredients here:  
+
 - **Line 1:** Creates a vector object called ``mycolours`` that specify two colours you'd like to use in the chart.  ``c`` means "combine".   
 - **Line 2:** Creates a list object called ``prog.comps`` that will tell the gggpubr package how to render your significance bar.  
 - **Line 3:** Starts the chart as an object. Specifies ``mydata`` as the source of the data, and the aesthetics (``aes``) of variables ``prog.type`` and ``apd``. Also tells ggplot to use the ``prog.type`` variable to group the bars. The plus sign ``+`` at the end of each line tells R to join these bits of code into one "chunk".  
@@ -226,8 +241,9 @@ This is a bit more complicated (but presented here as a final demonstration!), s
 - **Line 8:**  Adds the colours specified in the ``mycolours`` object and which levels you want them applying to.  
 - **Line 9:**  Lastly, changes the size of the text and removes the legend.  
 
-> Dare to try changing some of the visualisations?! For example, try changing ``legend.position = "none"`` to ``legend.position = "top"``...   
+> **Tip:** Dare to try changing some of the visualisations?! For example, try changing ``legend.position = "none"`` to ``legend.position = "top"``...   
 
+---
 ### STEP 9: Save your code file and consider your own journey into the brave new world...  :)  
 Save your code file by navigating to **File -> Save As** and save your file with a name like "training.R"  
 (Who knows, you might be coming back to add to it in the future!)  
@@ -237,8 +253,8 @@ However, if you commit to integrating it into your stats projects and building o
 
 > **Last tip!** I would recommend adding something like Andy Field's excellent R version of his SPSS textbook to your library. It's a really good investment. https://uk.sagepub.com/en-gb/eur/discovering-statistics-using-r/book236067  
 
+---
 GOOD LUCK!!!  
-
 **Ian**  
 
 *Last updated: January, 2021*  
