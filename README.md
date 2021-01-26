@@ -116,13 +116,39 @@ The t-value is -0.33 at 663.07 degrees of freedom, and the p-value is .740. So, 
 > **Try your own t-tests**, by selecting different integer (score) and factor (group) variables in the datset!  
 
 You could also try a within-subjects t-test using a comma instead of the tilde (~) and specifying that you want a paired test.  
-Here's an example of a within-subjects t-test to examine the pre-and post-programme difference in problem solving scores (pre.prob & post.prob):    
+Here's an example of a within-subjects t-test to examine the pre-and post-programme difference in problem solving scores (pre.prob & post.prob):   
     
     t.test(mydata$pre.prob, mydata$post.prob, paired = T)
     
 
 ### STEP 8: Let's try a basic chi-square test of association!  
-
+Ok, so what about categorical data? Let's try the association between *pre-treatment risk* (risk.gen) and *programme* (prog.type).  
+We know that prog.type is categorical already (it's class = factor) so let's check the risk variable is also in the correct format:
+    
+    class(mydata$risk.gen)
+    
+This should also return that ethnicity is a "factor". We can also see what levels are in that factor with a string command:
+    
+    str(mydata$risk.gen)
+    
+The output tells us that risk.gen is a factor with 4 levels:
+    
+    > str(mydata$risk.gen)
+     Factor w/ 4 levels "High","Low","Medium",..: 1 3 1 1 1 1 1 4 3 3 ...
+    
+We can also look at a table of the data before we run a chi-square test:  
+    
+    table(mydata$risk.gen, mydata$prog.type)
+    
+The output shows us the frequencies within each level of the factor, by the programme or no-programme groups.
+    
+    > table(mydata$risk.gen, mydata$prog.type)
+        
+                izon None
+      High     81  108
+      Low      11   26
+      Medium  170  242
+      Vhigh    40   72
 
 
 
