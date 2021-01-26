@@ -54,7 +54,8 @@ First, we need to tell R Studio where in our hard drive (or online) we need it t
 
 ### STEP 5: Loading some data into R Studio  
 Now we can load the data into our project environment so that we can run code over it.  
-**Remember**: To run code, in turn, place the cursor in the line you want to run and then press CTRL+RETURN. You can run each line at a time, or highlight the two lines and run them with the "Run" button in the top-right of the code file pane.  
+
+> **Remember**: To run code, in turn, place the cursor in the line you want to run and then press CTRL+RETURN. You can run each line at a time, or highlight the two lines and run them with the "Run" button in the top-right of the code file pane.  
     
     mydata <- read.csv("prog-example-data.csv", header = TRUE)  
     View(mydata)  
