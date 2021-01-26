@@ -92,10 +92,12 @@ Hopefully, this has returned:
     > class(mydata$prog.type)
     [1] "factor"
     
-This is good. If it doesn't look like that, you can change the class of the data by executing the following code:
+This is good. If it doesn't look like that, you can change the class of the data with code. Executing the following code tells R to recreate, for example, the variable ``adp`` as an integer.
 
     mydata$adp <- as.integer(mydata$adp)
-    mydata$prog.type <- as.integer(mydata$prog.type)
+    mydata$prog.type <- as.integer(mydata$prog.type)  
+    
+> **Remember:** the ``$`` operator separates an object from the elements within it, in the format ``object$element``. Here, that's in the format ``data$variable``.   
 
 To run the t-test you want to test the apd scores by programme type, so execute:
     
