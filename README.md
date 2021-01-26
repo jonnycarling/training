@@ -1,4 +1,4 @@
-## R demonstration for psychologists  
+## Demonstration R for curious psychologists  
 
 ### This is practice code and dummy data for basic R training purposes. 
 
@@ -10,6 +10,8 @@
 
 > **Remember:** The beauty of R is that you can tailor your analyses in a million different ways. 
 > Don't presume these examples even scratch the surface of what R can do! And don't be scared to try some coding of your own - you can always press **CTRL+Z** to undo your edits :)  
+
+There are 10 steps to follow, which (sort of) get a little more tricky as you work through them.  
 
 ---
 ### STEP 1: Downloading and installing the neccessary stuff  
@@ -187,7 +189,7 @@ Like the t-test, the output gives us a chi-square test value, degrees of freedom
 > **Tip:** Try your own chi-square tests on other categorical variables (e.g., ethnicity, previous convictions)!  
 
 ---
-### STEP 8: This is a step to the next level, but we can use ``ggplot2`` to chart those effects.  
+### STEP 9: This is a step to the next level, but we can use ``ggplot2`` to chart those effects.  
 One of the absolute strengths of R is the ability to visualise data and outcomes. Let's plot those two tests we've run.  
 "Base R" (the functions that come with R before you install any packages) can do plots, but they're pretty ugly.  
 First we'll run some code for a simple-but-ugly base chart, then we'll run some for a complex-but-beautiful ``ggplot`` chart!  
@@ -244,7 +246,7 @@ This is a bit more complicated (but presented here as a final demonstration!), s
 > **Tip:** Dare to try changing some of the visualisations?! For example, try changing ``legend.position = "none"`` to ``legend.position = "top"``...   
 
 ---
-### STEP 9: Save your code file and consider your own journey into the brave new world...  :)  
+### STEP 10: Save your code file and consider your own journey into the brave new world...  :)  
 Save your code file by navigating to **File -> Save As** and save your file with a name like "training.R"  
 (Who knows, you might be coming back to add to it in the future!)  
 
