@@ -58,11 +58,13 @@ First, we need to tell R Studio where in our hard drive (or online) we need it t
 Now we can load the data into our project environment so that we can run code over it.  
 **Remember**: To run code, in turn, place the cursor in the line you want to run and then press CTRL+RETURN.   
     
-    mydata <- read.csv("prog-example-data.csv", header = T)  
+    mydata <- read.csv("prog-example-data.csv", header = TRUE)  
     View(mydata)  
     
 The "header = T" option let's R know that your columns have headers at the top.  
 The second line allows you to see the dataframe object called "mydata" that you've just created. You should see it in the environment (top-right pane).  
+
+> **Tip**: You can substitute TRUE and FALSE for T and F.  
 
 ### STEP 6: We need some packages   
 Packages are the euivalent of the functions you select from the toolbar in SPSS.  
@@ -71,6 +73,7 @@ For now, we'll just need the "stats" package. First you'll install the package t
     install.packages("stats", dependencies = T)
     library(stats)  
     
+Specifying "dependencies = T" tells R that you also want to install any other packages that the "stats" package requires to run.  
 
 ### STEP 7: Let's try a basic between-subjects t-test!  
 Ok, let's see if there is a *programme* effect (prog.type) of *antisocial personality disorder* (apd).  
@@ -110,7 +113,13 @@ This should return something similar to:
 This tells us that the group means are 4.5 for the programme group and 4.6 for the no-programme group.  
 The t-value is -0.33 at 663.07 degrees of freedom, and the p-value is .740. So, we fail to reject the null hypothesis.  
 
-> **Try your own t-tests**, by selecting different integer (score) and factor (group) variables in the datset! 
+> **Try your own t-tests**, by selecting different integer (score) and factor (group) variables in the datset!  
+
+You could also try a within-subjects t-test using a comma instead of the tilde (~) and specifying that you want a paired test.  
+Here's an example of a within-subjects t-test to examine the pre-and post-programme difference in problem solving scores (pre.prob & post.prob):    
+    
+    t.test(mydata$pre.prob, mydata$post.prob, paired = T)
+    
 
 ### STEP 8: Let's try a basic chi-square test of association!  
 
