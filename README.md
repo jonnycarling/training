@@ -56,7 +56,7 @@ First, we need to tell R Studio where in our hard drive (or online) we need it t
 
 ### STEP 5: Loading some data into R Studio  
 Now we can load the data into our project environment so that we can run code over it.  
-**Remember**: To run code, in turn, place the cursor in the line you want to run and then press CTRL+RETURN.   
+**Remember**: To run code, in turn, place the cursor in the line you want to run and then press CTRL+RETURN. You can run each line at a time, or highlight the two lines and run them with the "Run" button in the top-right of the code file pane.  
     
     mydata <- read.csv("prog-example-data.csv", header = TRUE)  
     View(mydata)  
@@ -170,7 +170,7 @@ One of the absolute strengths of R is the ability to visualise data and outcomes
 "Base R" (the functions that come with R before you install any packages) can do plots, but they're pretty ugly.  
 First we'll run some code for a simple-but-ugly base chart, then we'll run some for a complex-but-beautiful ggplot chart!  
 
-But first we need to install the *ggplot2* package:  
+But first we need to install the "ggplot2" package:  
     
     install.packages("ggplot2", dependencies = T)
     library(ggplot2)  
@@ -180,14 +180,19 @@ Here's the plot you can get from base R:
     plot(mydata$prog.type, mydata$apd)
     
 Prob couldn't get that into a journal article though right? Well, we can spruce it up with ggplot.  
-We'll also install and load *ggpubr* and *Hmisc*, so we can include a significance bar and error bars.  
+We'll also install and load "ggpubr" and "Hmisc", so we can include a significance bar and error bars.  
     
     install.packages(c("ggpubr", "Hmisc"), dependencies = T)
     library(ggpubr)  
     library(Hmisc)  
     
-So here's the code you can run:  
+You can still run quite basic plots with ggplot2. Here's the basic code for the adp t-test (specifying that you want the chart to plot the summary values derived from the *mean* function):  
     
+    ggplot(mydata, aes(prog.type, apd) +
+      geom_bar(stat = "summary", fun = "mean")
+    
+But, again, it's not as visually attractive as it could be. Let's add some bells and whistles from ggplot!  
+        
     mycolours <- c("#284969", "#5599C6") # pick a couple of colours
     prog.comps <- list(c("izon", "None")) # tell ggpubr what comparison you want it to show significance for
     ggplot(mydata, aes(prog.type, apd, fill = prog.type)) +
@@ -203,15 +208,15 @@ So here's the code you can run:
 This should arrive in the "Plots" tab in the bottom-right hand pane.  
 
 This is a bit more complicated (but presented here as a final demonstration!), so let's have a quick look at the ingredients here:  
-- Line 1: Creates a vector object called "mycolours" that specify two colours you'd like to use in the chart.  "c" means "combine".   
-- Line 2: Creates a list object called "prog.comps" that will tell the gggpubr package how to render your significance bar.  
-- Line 3: Starts the chart as an object. Specifies "mydata" as the source of the data, and the aesthetics ("aes") of variables prog.type and apd. Also tells ggplot to use the prog.type variable to group the bars. The plus sign (+) tells R to join these bits of code into one "chunk".  
-- Line 4:  Specifies the stats you want to the chart to use. You want to use the *mean* function from "stats" to chart the means, via a bar chart, with the options to "dodge" (separate) the bars, make them 50% transparent, and give the bars a black outline.  
-- Line 5:  Adds the error bars, using the mean using the *mean_cl_normal* function from "Hmisc", and instructions on where to position them and their size.  
-- Line 6:  Adds the significance bar by telling ggplot to display the outcome of a "t.test" on the levels specified in "prog.comps". It also specifies that you want the display the p-value test. Lastly it tells ggplot how high up the y axis to put it (label.y) and what size and shape it should be (size, tip.length).  
-- Line 7:  Adds labels to the chart on the x and y axis and tells ggplot what to use to label the bars (fill).  
-- Line 8:  Adds the colours specified in the "mycolours" object and which levels you want them applying to.  
-- Line 9:  Lastly, changes the size of the text and removes the legend.  
+- **Line 1:** Creates a vector object called "mycolours" that specify two colours you'd like to use in the chart.  "c" means "combine".   
+- **Line 2:** Creates a list object called "prog.comps" that will tell the gggpubr package how to render your significance bar.  
+- **Line 3:** Starts the chart as an object. Specifies "mydata" as the source of the data, and the aesthetics ("aes") of variables prog.type and apd. Also tells ggplot to use the prog.type variable to group the bars. The plus sign (+) tells R to join these bits of code into one "chunk".  
+- **Line 4:**  Specifies the stats you want to the chart to use. You want to use the *mean* function from "stats" to chart the means, via a bar chart, with the options to "dodge" (separate) the bars, make them 50% transparent, and give the bars a black outline.  
+- **Line 5:**  Adds the error bars, using the mean using the *mean_cl_normal* function from "Hmisc", and instructions on where to position them and their size.  
+- **Line 6:**  Adds the significance bar by telling ggplot to display the outcome of a "t.test" on the levels specified in "prog.comps". It also specifies that you want the display the p-value test. Lastly it tells ggplot how high up the y axis to put it (label.y) and what size and shape it should be (size, tip.length).  
+- **Line 7:**  Adds labels to the chart on the x and y axis and tells ggplot what to use to label the bars (fill).  
+- **Line 8:**  Adds the colours specified in the "mycolours" object and which levels you want them applying to.  
+- **Line 9:**  Lastly, changes the size of the text and removes the legend.  
 
 > Dare to try changing some of the visualisations?! For example, try **changing legend.position = "none"** to **legend.position = "top"**...   
 
