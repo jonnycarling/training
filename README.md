@@ -1,4 +1,4 @@
-## R training for psychologists  
+## R demonstration for psychologists  
 
 ### This is practice code and dummy data for basic R training purposes. 
 
