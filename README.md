@@ -19,7 +19,7 @@ Create a folder somewhere easy to find on your computer's hard drive. My recomme
 Download the data from this repository (https://github.com/ianaelliott/training) and move it into that folder.  
 
 ### STEP 2: Understanding a few basic "need-to-knows"  
-- Any text that is prefixed with a hash (#) will be ignored by R, so you can use hash marks to annotate your code.  
+- Any text that is prefixed with a hash ``#`` will be ignored by R, so you can use hash marks to annotate your code.  
 - R is **CASE-SENSITIVE** so if you run into an error, check your spelling and/or capitalisations.  
 - Copying and pasting code is not cheating: in fact, it's part and parcel of the collaborative nature of open-source stats!  
 - To **run** code, either:  
@@ -60,26 +60,26 @@ Now we can load the data into our project environment so that we can run code ov
     mydata <- read.csv("prog-example-data.csv", header = TRUE)  
     View(mydata)  
     
-Objects are created and assigned values using ``<-`` or ``=``. So this will create an object called "mydata" that is a dataframe built from the .csv file.  
+Objects are created and assigned values using ``<-`` or ``=``. So this will create an object called ``mydata`` that is a dataframe built from the .csv file.  
 
 > **Tip:** ``=`` doesn't mean equal to in R, it means "assign to". If you need to specify that something "is equal to" you need to use ``==``. This maybe makes more sense when you consider other similar operators are also combinations of two characters: not-equal-to ``!=``, less-than-or-equal-to ``<=``, and so on.  
 
-The "header = T" option let's R know that your columns have headers at the top.  
-The second line allows you to see the dataframe object called "mydata" that you've just created. You should see it in the environment (top-right pane).  
+The ``header = T`` option let's R know that your columns have headers at the top.  
+The second line allows you to view the dataframe object that you've just created. You should see it in the environment (top-right pane).  
 
-> **Tip**: You can substitute TRUE and FALSE for T and F.  
+> **Tip**: You can substitute ``TRUE`` and ``FALSE`` for ``T`` and ``F``.  
 
 ### STEP 6: We need some packages   
 Packages are the euivalent of the functions you select from the toolbar in SPSS.  
-For now, we'll just need the "stats" package. First you'll install the package to the "library" of packages on your hard drive, then load them from the library so that we can use the functions within them in our analyses.
+For now, we'll just need the ``stats`` package. First you'll install the package to the "library" of packages on your hard drive, then load them from the library so that we can use the functions within them in our analyses.
     
     install.packages("stats", dependencies = T)
     library(stats)  
     
-Specifying "dependencies = T" tells R that you also want to install any other packages that the "stats" package requires to run.  
+Specifying ``dependencies = T`` tells R that you also want to install any other packages that the ``stats`` package requires to run.  
 
 ### STEP 7: Let's try a basic between-subjects t-test!  
-Ok, let's see if there is a *programme* effect (prog.type) of *antisocial personality disorder* (apd).  
+Ok, let's see if there is a *programme* effect ``prog.type`` of *antisocial personality disorder* ``apd``.  
 First we want to check our data are numerical so that the test will execute correctly:  
     
     class(mydata$apd)
@@ -92,7 +92,7 @@ Hopefully, this has returned:
     > class(mydata$prog.type)
     [1] "factor"
     
-This is good. (If it hasn't, you can change the data by executing the following code:
+This is good. If it doesn't look like that, you can change the class of the data by executing the following code:
 
     mydata$adp <- as.integer(mydata$adp)
     mydata$prog.type <- as.integer(mydata$prog.type)
@@ -121,15 +121,15 @@ The t-value is -0.33 at 663.07 degrees of freedom, and the p-value is .740. So, 
 
 > **Try your own t-tests**, by selecting different integer (score) and factor (group) variables in the datset!  
 
-You could also try a within-subjects t-test using a comma instead of the tilde (~) and specifying that you want a paired test.  
+You could also try a within-subjects t-test using a comma instead of the tilde ``~`` and specifying that you want a paired test.  
 Here's an example of a within-subjects t-test to examine the pre-and post-programme difference in problem solving scores (pre.prob & post.prob):   
     
     t.test(mydata$pre.prob, mydata$post.prob, paired = T)
     
 
 ### STEP 8: Let's try a basic chi-square test of association!  
-Ok, so what about categorical data? Let's try the association between *pre-treatment risk* (risk.gen) and *programme* (prog.type).  
-We know that prog.type is categorical already (it's class = factor) so let's check the risk variable is also in the correct format:  
+Ok, so what about categorical data? Let's try the association between *pre-treatment risk* ``risk.gen`` and *programme* ``prog.type``.  
+We know that ``prog.type`` is categorical already (it's class = factor) so let's check the risk variable is also in the correct format:  
     
     class(mydata$risk.gen)
     
@@ -171,12 +171,12 @@ Like the t-test, the output gives us a chi-square test value, degrees of freedom
     
 > Try your own chi-square tests on other categorical variables (e.g., ethnicity, previous convictions)!  
 
-### STEP 8: This is a step to the next level, but we can use the "ggplot2" to chart those effects.  
+### STEP 8: This is a step to the next level, but we can use ``ggplot2`` to chart those effects.  
 One of the absolute strengths of R is the ability to visualise data and outcomes. Let's plot those two tests we've run.  
 "Base R" (the functions that come with R before you install any packages) can do plots, but they're pretty ugly.  
-First we'll run some code for a simple-but-ugly base chart, then we'll run some for a complex-but-beautiful ggplot chart!  
+First we'll run some code for a simple-but-ugly base chart, then we'll run some for a complex-but-beautiful ``ggplot`` chart!  
 
-But first we need to install the "ggplot2" package:  
+But first we need to install the ``ggplot2`` package:  
     
     install.packages("ggplot2", dependencies = T)
     library(ggplot2)  
@@ -186,13 +186,13 @@ Here's the plot you can get from base R:
     plot(mydata$prog.type, mydata$apd)
     
 Prob couldn't get that into a journal article though right? Well, we can spruce it up with ggplot.  
-We'll also install and load "ggpubr" and "Hmisc", so we can include a significance bar and error bars.  
+We'll also install and load ``ggpubr`` and ``Hmisc``, so we can include a significance bar and error bars.  
     
     install.packages(c("ggpubr", "Hmisc"), dependencies = T)
     library(ggpubr)  
     library(Hmisc)  
     
-You can still run quite basic plots with ggplot2. Here's the basic code for the adp t-test (specifying that you want the chart to plot the summary values derived from the *mean* function):  
+You can still run quite basic plots with ggplot. Here's the basic code for the adp t-test, specifying that you want the chart to plot the ``summary`` values derived from the ``mean`` function:  
     
     ggplot(mydata, aes(prog.type, apd) +
       geom_bar(stat = "summary", fun = "mean")
@@ -214,17 +214,17 @@ But, again, it's not as visually attractive as it could be. Let's add some bells
 This should arrive in the "Plots" tab in the bottom-right hand pane.  
 
 This is a bit more complicated (but presented here as a final demonstration!), so let's have a quick look at the ingredients here:  
-- **Line 1:** Creates a vector object called "mycolours" that specify two colours you'd like to use in the chart.  "c" means "combine".   
-- **Line 2:** Creates a list object called "prog.comps" that will tell the gggpubr package how to render your significance bar.  
-- **Line 3:** Starts the chart as an object. Specifies "mydata" as the source of the data, and the aesthetics ("aes") of variables prog.type and apd. Also tells ggplot to use the prog.type variable to group the bars. The plus sign (+) tells R to join these bits of code into one "chunk".  
-- **Line 4:**  Specifies the stats you want to the chart to use. You want to use the *mean* function from "stats" to chart the means, via a bar chart, with the options to "dodge" (separate) the bars, make them 50% transparent, and give the bars a black outline.  
-- **Line 5:**  Adds the error bars, using the mean using the *mean_cl_normal* function from "Hmisc", and instructions on where to position them and their size.  
-- **Line 6:**  Adds the significance bar by telling ggplot to display the outcome of a "t.test" on the levels specified in "prog.comps". It also specifies that you want the display the p-value test. Lastly it tells ggplot how high up the y axis to put it (label.y) and what size and shape it should be (size, tip.length).  
-- **Line 7:**  Adds labels to the chart on the x and y axis and tells ggplot what to use to label the bars (fill).  
-- **Line 8:**  Adds the colours specified in the "mycolours" object and which levels you want them applying to.  
+- **Line 1:** Creates a vector object called ``mycolours`` that specify two colours you'd like to use in the chart.  ``c`` means "combine".   
+- **Line 2:** Creates a list object called ``prog.comps`` that will tell the gggpubr package how to render your significance bar.  
+- **Line 3:** Starts the chart as an object. Specifies ``mydata`` as the source of the data, and the aesthetics (``aes``) of variables ``prog.type`` and ``apd``. Also tells ggplot to use the ``prog.type`` variable to group the bars. The plus sign ``+`` at the end of each line tells R to join these bits of code into one "chunk".  
+- **Line 4:**  Specifies the stats you want to the chart to use. You want to use the ``mean`` function from the ``stats`` package to chart the means, via a bar chart, with the options to ``dodge`` (separate) the bars, make them 50% transparent with ``alpha``, and give the bars a black outline.  
+- **Line 5:**  Adds the error bars, using the mean using the ``mean_cl_normal`` function from ``Hmisc``, and instructions on where to position them and their size.  
+- **Line 6:**  Adds the significance bar by telling ggplot to display the outcome of a ``t.test`` on the levels specified in ``prog.comps``. It also specifies that you want the display the p-value test. Lastly it tells ggplot how high up the y axis to put it (``label.y``) and what size and shape it should be (``size`` and ``tip.length``).  
+- **Line 7:**  Adds labels to the chart on the x and y axis and tells ggplot what to use to label the bars (``fill``).  
+- **Line 8:**  Adds the colours specified in the ``mycolours`` object and which levels you want them applying to.  
 - **Line 9:**  Lastly, changes the size of the text and removes the legend.  
 
-> Dare to try changing some of the visualisations?! For example, try **changing legend.position = "none"** to **legend.position = "top"**...   
+> Dare to try changing some of the visualisations?! For example, try ``changing legend.position = "none"`` to ``legend.position = "top"``...   
 
 ### STEP 9: Save your code file and consider your own journey into the brave new world...  :)  
 Save your code file by navigating to **File -> Save As** and save your file with a name like "training.R"  
