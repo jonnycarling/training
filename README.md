@@ -234,7 +234,7 @@ This should arrive in the "Plots" tab in the bottom-right hand pane.
 This is a bit more complicated (but presented here as a final demonstration!), so let's have a quick look at the ingredients here:  
 
 - **Line 1:** Creates a vector object called ``mycolours`` that specify two colours you'd like to use in the chart.  ``c`` means "combine".   
-- **Line 2:** Creates a list object called ``prog.comps`` that will tell the gggpubr package how to render your significance bar.  
+- **Line 2:** Creates a list object called ``prog.comps`` that will tell the ``ggpubr`` package how to render your significance bar.  
 - **Line 3:** Starts the chart as an object. Specifies ``mydata`` as the source of the data, and the aesthetics (``aes``) of variables ``prog.type`` and ``apd``. Also tells ggplot to use the ``prog.type`` variable to group the bars. The plus sign ``+`` at the end of each line tells R to join these bits of code into one "chunk".  
 - **Line 4:**  Specifies the stats you want to the chart to use. You want to use the ``mean`` function from the ``stats`` package to chart the means, via a bar chart, with the options to ``dodge`` (separate) the bars, make them 50% transparent with ``alpha``, and give the bars a black outline.  
 - **Line 5:**  Adds the error bars, using the mean using the ``mean_cl_normal`` function from ``Hmisc``, and instructions on where to position them and their size.  
