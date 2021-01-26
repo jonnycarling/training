@@ -60,11 +60,22 @@ setwd(~R\Training)
 
 ### STEP 5: Loading some data into R Studio  
 Now we can load the data into 
-   
+    
     mydata <- read.csv("prog-example-data.csv", header = T)  
     View(mydata)  
     
+The "header = T" option let's R know that your columns have headers at the top.  
+The second line allows you to see the dataframe object called "mydata" that you've just created. You should see it in the environment (top-right pane).  
 
-### STEP 6: Exploring the nature of the data
+### STEP 6: We need some packages   
+Packages are the euivalent of the functions you select from the toolbar in SPSS.  
+For now, we'll just need the "stats" package. First you'll install the package to the "library" of packages on your hard drive, then load them from the library so that we can use the functions within them in our analyses.
+    
+    install.packages("stats", dependencies = T)
+    library(stats)  
+    
 
-### STEP 7: 
+### STEP 7: Let's try a basic between-subjects t-test!  
+First we want to check our data are numerical so that the test will execute correctly:
+
+
