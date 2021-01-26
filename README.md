@@ -2,22 +2,20 @@
 
 ### This is practice code and dummy data for basic R training purposes. 
 
-The aim of this repository is to help existing psychologists that are trained in SPSS to learn how to replicate those basic skills, but on R Studio.  
+**Mission:** To help existing psychologists who are trained in SPSS to learn how to replicate those basic skills, but in R and via R Studio.  
 
-The objective is to guide you, step-by-step, through two examples of basic analyses that you might encounter from typical psychological intervention data and that you may have already conducted using SPSS.  
+**Aim:** To illustrate, using two worked examples, how R Studio operates and introduce you to the process of writing and running analytical code. It is **not** intended to be a comprehensive introduction to statistics on R. (Clearly, you would do more than is covered here if you were doing a real analysis.)  
 
-The first is a two-sample student's t-test using numerical data and the second is a chi-square test of association using categorical data.  
+**Objective:** To guide the reader, step-by-step, through two examples of basic statistical analyses that a typical psychologist would likely have encountered and may have conducted before using SPSS: (1) a two-sample student's t-test using numerical data and (2) a chi-square test of association using categorical data.  
 
-The aim is to illustrate, using two worked examples, how R Studio operates and introduce you to the process of writing and running analytical code. It is **not** intended to be a comprehensive introduction to statistics on R. (Clearly, you would do more than is covered here if you were doing a real analysis.)  
-
-> Just remember, the beauty of R is that you can tailor your analyses in a million different ways. Don't presume these examples even scratch the surface of what R can do! And don't be scared to try some coding of your own - you can always press CTRL+Z to undo your edits :)  
+> **Remember:** The beauty of R is that you can tailor your analyses in a million different ways. Don't presume these examples even scratch the surface of what R can do! And don't be scared to try some coding of your own - you can always press CTRL+Z to undo your edits :)  
 
 ### STEP 1: Downloading and installing the neccessary stuff  
 Here's where you want to go to get the software.  
 **R**: https://cran.ma.imperial.ac.uk/  
 **R Studio**: https://rstudio.com  
 
-Create a folder somewhere easy to find on your computer. My recommendation is to create a folder in **My Documents/R** and then a subfolder called /Training  
+Create a folder somewhere easy to find on your computer's hard drive. My recommendation is to create a folder in **My Documents/R** and then a subfolder called /Training  
 Download the data from this repository (https://github.com/ianaelliott/training) and move it into that folder.  
 
 ### STEP 2: Understanding a few basic "need-to-knows"  
@@ -25,18 +23,18 @@ Download the data from this repository (https://github.com/ianaelliott/training)
 - R is **CASE-SENSITIVE** so if you run into an error, check your spelling and/or capitalisations.  
 - Copying and pasting code is not cheating: in fact, it's part and parcel of the collaborative nature of open-source stats!  
 - To **run** code, either:  
-  - place the cursor into a single chunk of code you want to run and hit Ctrl+Rtn  
+  - place the cursor into a single chunk of code you want to run and hit **CTRL+RETURN**  
   - select (highlight) chunks of code that you want to run and click the "Run" button  
   - place the cursor at the start and hit "Run": it'll run everything!  
 
-> Remember: If at first you don't succeed, **COPY AND PASTE IT INTO A SEARCH ENGINE!** :) Seriously, whatever you've done I **guarantee** you, someone else has also done it and there's an explanation of how to fix it!  
+> **Remember:** If at first you don't succeed, **COPY AND PASTE IT INTO A SEARCH ENGINE!** :) Seriously, whatever you've done I **guarantee** you, someone else has also done it and there's an explanation of how to fix it!  
 
 ### STEP 3: Familarising yourself with the typical R Studio layout
-When you open R Studio, it should look a bit like this (but if it doesn - **don't worry**, it soon will!):  
+When you open R Studio, it should look a bit like the image below. But if it doesn't, **don't worry**, it soon will!  
 
    ![R Studio layout](r-screen.png)  
 
-Let's make sure you've got a .R file to write your code in. Either navigate to **File -> New File -> R Script** or press **CTRL+SHIFT+N**.  
+Let's also make sure you've got a .R file open to write your code in. Either navigate to **File -> New File -> R Script** or press **CTRL+SHIFT+N**.  
 
 Now you should have four quadrants:  
 - **Top left**: This is your .R file, where you'll write and save your code. Why not give your file a title like ``## MY TRAINING CODE ##``   
@@ -230,5 +228,7 @@ However, if you commit to integrating it into your stats projects and building o
 > **Last tip!** I would recommend adding something like Andy Field's excellent R version of his SPSS textbook to your library. It's a really good investment. https://uk.sagepub.com/en-gb/eur/discovering-statistics-using-r/book236067  
 
 GOOD LUCK!!!  
+
 **Ian**  
+
 *Last updated: January, 2021*  
