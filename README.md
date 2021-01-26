@@ -62,7 +62,7 @@ Now we can load the data into our project environment so that we can run code ov
     
 Objects are created and assigned values using ``<-`` or ``=``. So this will create an object called "mydata" that is a dataframe built from the .csv file.  
 
-> **Tip:** ``=`` doesn't mean equal to in R, it means "assign to". If you need to specify that something "is equal to" you need to use ``==``. This maybe makes more sense when you consider other limiters are also combinations of two characters: not-equal-to ``!=``, less-than-or-equal-to ``<=``, and so on.  
+> **Tip:** ``=`` doesn't mean equal to in R, it means "assign to". If you need to specify that something "is equal to" you need to use ``==``. This maybe makes more sense when you consider other similar operators are also combinations of two characters: not-equal-to ``!=``, less-than-or-equal-to ``<=``, and so on.  
 
 The "header = T" option let's R know that your columns have headers at the top.  
 The second line allows you to see the dataframe object called "mydata" that you've just created. You should see it in the environment (top-right pane).  
