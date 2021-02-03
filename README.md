@@ -20,7 +20,7 @@ Here's where you want to go to get the software.
 **R Studio**: https://rstudio.com  
 
 Create a folder somewhere easy to find on your computer's hard drive. My recommendation is to create a folder in **My Documents/R** and then a subfolder called /Training  
-Download the data from this repository (https://github.com/ianaelliott/training) and move it into that folder.  
+Download the data from [this repository](https://github.com/ianaelliott/training) and move it into that folder.  
 
 ---
 ### STEP 2: Understanding a few basic "need-to-knows"  
