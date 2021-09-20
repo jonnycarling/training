@@ -121,7 +121,7 @@ This should return something similar to:
 
     > t.test(mydata$apd ~ mydata$prog.type)
 
- 	Welch Two Sample t-test
+		Welch Two Sample t-test
 
     data:  mydata$apd by mydata$prog.type
     t = -0.3321, df = 663.07, p-value = 0.7399
