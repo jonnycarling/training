@@ -181,7 +181,7 @@ Like the t-test, the output gives us a chi-square test value, degrees of freedom
     
     > chisq.test(mydata$ethnicity, mydata$prog.type)
 
-	Pearson's Chi-squared test
+		Pearson's Chi-squared test
 
     data:  mydata$ethnicity and mydata$prog.type
     X-squared = 9.5829, df = 9, p-value = 0.3853
