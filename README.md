@@ -121,8 +121,6 @@ This should return something similar to:
 
     > t.test(mydata$apd ~ mydata$prog.type)
 
-		Welch Two Sample t-test
-
     data:  mydata$apd by mydata$prog.type
     t = -0.3321, df = 663.07, p-value = 0.7399
     alternative hypothesis: true difference in means is not equal to 0
