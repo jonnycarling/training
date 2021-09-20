@@ -78,7 +78,7 @@ Objects are created and assigned values using ``<-`` or ``=``. So this will crea
 The ``header = T`` option let's R know that your columns have headers at the top.  
 The second line allows you to view the dataframe object that you've just created. You should see it in the environment (top-right pane).  
 
-> **Tip**: You can substitute ``TRUE`` and ``FALSE`` for ``T`` and ``F``.  
+> **Tip**: You can substitute ``TRUE`` and ``FALSE`` for ``T`` and ``F``. (Although, some R purists frown upon it!)  
 
 ---
 ### STEP 6: We need some packages   
@@ -121,7 +121,7 @@ This should return something similar to:
 
     > t.test(mydata$apd ~ mydata$prog.type)
 
-  	      Welch Two Sample t-test
+ 	Welch Two Sample t-test
 
     data:  mydata$apd by mydata$prog.type
     t = -0.3321, df = 663.07, p-value = 0.7399
@@ -146,7 +146,7 @@ Here's an example of a within-subjects t-test to examine the pre-and post-progra
 ---
 ### STEP 8: Let's try a basic chi-square test of association!  
 Ok, so what about categorical data? Let's try the association between *pre-treatment risk* ``risk.gen`` and *programme* ``prog.type``.  
-We know that ``prog.type`` is categorical already (it's class = factor) so let's check the risk variable is also in the correct format:  
+We know that ``prog.type`` is categorical already (its class == factor) so let's check the risk variable is also in the correct format:  
     
     class(mydata$risk.gen)
     
@@ -181,7 +181,7 @@ Like the t-test, the output gives us a chi-square test value, degrees of freedom
     
     > chisq.test(mydata$ethnicity, mydata$prog.type)
 
-	          Pearson's Chi-squared test
+	Pearson's Chi-squared test
 
     data:  mydata$ethnicity and mydata$prog.type
     X-squared = 9.5829, df = 9, p-value = 0.3853
